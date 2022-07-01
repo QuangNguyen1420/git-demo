@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-image: url(./images_coffee/coffee_slider.jpg); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    margin: 0;
+}
+.header{
+   
+    background-color: rgba(255, 255, 255, 0.695);
+    margin: 0;
+    height: 10vh;
+    -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 3x 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+    width: 100% !important;
+    position: fixed;
+    /* position: -webkit-sticky; */
+    top:0;
+    z-index: +1;
+}
+
+.navigation{
+    max-width: 80vw;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.main_menu{
+    display: flex;
+
+}
+.main_menu li{
+    margin: auto;
+    list-style-type: none;
+    padding: 10px 20px;
+}
+.main_menu li a {
+    color: rgba(12, 12, 12, 0.911);
+    text-decoration:none;
+    font-size: 1rem;
+}
+.menu_all{
+    position: relative;
+}
+.sub_menu{
+    transform: translateX(-47%);
+    margin: auto;
+    padding: 5px;
+    width: 40vw;
+    height: 20vh;
+    background-color: rgb(243, 233, 221);
+    position: absolute;
+    display:none;
+    transition: 2s;
+    z-index: 10;
+    
+}
+.menu_all:hover .sub_menu {
+    display: flex;
+    
+
+}
+
+.menu_coffee {
+    flex: 30%;
+
+}
+.menu_tea {
+    flex:25%;
+
+}
+.menu_cake{
+    flex: 25%;
+}
+
+
+.high_light_page a:hover {
+    color: #EA8025;
+    transition: color 0.5s
+}
+#hili_now a {
+    color: #EA8025;
+}
+/******************* slider show  ***********************/
+
+
+.content {
+    z-index: -1;
+    margin-top:10vh;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+
+}
+.t1 div{
+    padding-top: 43%;
+    background-image: url('./images_coffee/coffee_slider.jpg') !important;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center; 
+}
+.t2 div{
+    padding-top: 43%;
+    background-image: url('./images_coffee/Pulp-fact-Coffee-by-product-can-help-wound-healing-twice-as-fast-as-nature.jpg') ;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.t3{
+    padding-top: 43%;
+    background-image: url('./images_coffee/coffe_slider3.jpg') ;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.t4{
+    padding-top: 43%;
+    background-image: url('./images_coffee/coffe_slider3.jpg' ) ;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+.slider{
+    width: 100vw;
+    height: 90vh; 
+    /* padding-top: 43%; */
+    /* overflow: hidden; */
+}
+
+.slides{
+    width: 500%;
+    height: 90vh; 
+    display: flex;
+    /* position: relative; */
+}
+
+.slides input{
+    display: none;
+   
+}
+.slide{
+    width: 20%;
+    transition: 1s;
+}
+.navigation-manual{
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    /* transform: translateX(50%); */
+    margin-top: -50px;
+    text-align: center;
+    display: flex;
+}
+.manual-btn{
+    border: 2px solid rgb(114, 33, 11) ;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+.manual-btn:hover{
+   background: rgb(114, 33, 11);
+}
+
+ #radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+#radio4:checked ~ .first{
+    margin-left: -60%;
+} 
+/* ************ end slider ***************** */
+
+.content__row{
+    z-index: 0;
+    margin-top: 20vw;
+    display: flex;
+    justify-content: space-around;
+}
+.content__row--text{
+    margin: 15vh 15vw;
+    
+    flex:50%
+}  
+.content__row--img{
+    /* z-index: -1; */
+    margin-right: 10vw;
+    flex:50%;
+    transform: rotate(2deg);
+
+} 

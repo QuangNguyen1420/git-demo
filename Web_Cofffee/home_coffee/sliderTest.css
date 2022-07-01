@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+.carousel-container{
+    width: 80%;
+    margin: auto;
+    /* overflow: hidden; */
+    border: 5px solid black;
+}
+.carousel-slide{
+	display: flex;
+    width: 100%;
+
+
+}
+

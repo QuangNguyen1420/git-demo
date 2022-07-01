@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./menu_coffee.css">
+    <link rel="stylesheet" href="../../fontawesome-free-6.1.1-web/css/all.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="navigation">
+            <a href="" class="logo"><img src="../images_coffee/logo-adc-removebg-preview.png" style="height: 10vh;border-radius:50%" alt="adc.hust"></a>
+            <div class="main_menu">
+                <li id="hili_now" class="high_light_page"><a href="../nav.html">Home</a></li>
+             
+                <li class="high_light_page menu_all"><a href="">Menu</a>
+                    <i class="fa-solid fa-caret-down" style="font-size: 10px;"></i>
+                    <ul class="sub_menu">
+                        <ul class="menu_coffee">
+                            <li><a href="">Traditional Coffe</a></li>
+                            <li><a href="">Capuchino Coffee </a></li>
+                        </ul>
+                        <ul class="menu_tea">
+                            <li><a href="">MilkTea</a></li>
+                            <li> <a href="">Jasmine Tea</a></li>
+                            <li> <a href="">Fruit Tea</a></li>  
+                        </ul>
+                        <ul class="menu_cake">
+                            <li><a href="">Cream cake</a></li>
+                            <li><a href="">Caramen</a></li>
+                        </ul>
+                    </ul>
+                
+                </li>
+                <li class="high_light_page"><a href="">Music and Coffe</a></li>
+                <li class="high_light_page"><a href="">Story</a></li>
+                <li class="high_light_page"><a href="">Space Coffee </a></li>  
+                <li class="high_light_page"><a href="">Locations</a></li>
+                
+            </div>
+        </div>
+    </div>
+    <!-- end navagation -->
+    <div class="container">
+        <div class="listMenu">
+            <div class="inListMenu">
+            <ul>
+                <li>
+                    <h3>All</h3>
+                </li>
+                <li class="listDrink coffee"><a href="#">Traditional Coffe</a></li>
+                <li class="listDrink coffee"><a href="#">Capuchino Coffee</a></li>
+                <li class="listDrink coffee"><a href="#">age coffee</a></li>
+                <li class="listDrink tea"><a href="#">Jasmine Tea</a></li>
+                <li class="listDrink tea"><a href="#">Fruit Tea</a></li>
+                <li class="listDrink tea"><a href="#">Milk Tea</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="imgMenu">
+            <h3 class="type_coffee">Traditional Coffee</h3>
+            <div class="tradi_coffee ">
+                <a href="../nav.html">
+                <div class="black_coffee"></div>
+                </a>
+                <a href="../nav.html"><p class="txt_brand">Black Coffee</p></a>
+                <p class="cost"> 20.000 đ</p>
+            </div>
+            <div class="tradi_coffee ">
+                <div class="brown_coffee"></div>
+                <p class="txt_brand">Brown Coffee</p>
+                <p class="cost"> 20.000 đ</p>
+            </div>
+            <div class="tradi_coffee">
+                <div class="hot_coffee"></div>
+                <p class="txt_brand">Hot Coffee</p>
+                <p class="cost"> 20.000 đ</p>
+            </div>
+        </div>
+        
+        
+    </div>
+    <script type="text/javascript">
+        var menu = [
+            {
+                img:1,
+                name:"Black Coffee",
+                cost:20000
+            },
+            {
+                img:1,
+                name:"Brown Coffee",
+                cost:20000
+            },
+            {
+                img:1,
+                name:"Hot Coffee",
+                cost:20000
+            }
+
+        ]
+
+        // ////////////////////////////////////////////
+        Array.prototype.map2 = function(callback) {  
+                for(var i =0; i<= this.length;++i){
+                    callback(this[i],i)
+                }
+             
+        }
+
+        menu.map2(function(inlsMenu, index){
+                console.log(inlsMenu,index)
+        });
+
+
+    </script>
+</body>
+</html>

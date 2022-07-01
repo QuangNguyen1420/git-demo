@@ -1,0 +1,230 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-image: url(./images_coffee/coffee_slider.jpg); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    margin: 0;
+    overflow-x: hidden;
+}
+.header{
+   
+    background-color: rgba(255, 255, 255, 0.816);
+    margin: 0;
+    height: 10vh;
+    -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 3x 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+    width: 100% !important;
+    position: fixed;
+    /* position: -webkit-sticky; */
+    top:0;
+    z-index: +1;
+}
+
+.navigation{
+    max-width: 80vw;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.main_menu{
+    display: flex;
+
+}
+.main_menu li{
+    margin: auto;
+    list-style-type: none;
+    padding: 10px 20px;
+}
+.main_menu li a {
+    color: rgba(12, 12, 12, 0.911);
+    text-decoration:none;
+    font-size: 1rem;
+}
+.menu_all{
+    position: relative;
+}
+.sub_menu{
+    transform: translateX(-47%);
+    margin: auto;
+    padding: 5px;
+    width: 40vw;
+    height: 20vh;
+    background-color: rgba(253, 246, 238, 0.986);
+    position: absolute;
+    display:none;
+    transition: 2s;
+    z-index: 10;
+    
+}
+.menu_all:hover .sub_menu {
+    display: flex;
+    
+
+}
+
+.menu_coffee {
+    flex: 30%;
+
+}
+.menu_tea {
+    flex:25%;
+
+}
+.menu_cake{
+    flex: 25%;
+}
+
+
+.high_light_page a:hover {
+    color: #EA8025;
+    transition: color 0.5s
+}
+#hili_now a {
+    color: #EA8025;
+}
+/* ************* end nava************** */
+.container{
+    margin-top: 10vh;
+    /* background-color: bisque; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+.listMenu{
+    width: 25%;
+    height: 100%;
+    /* background-color: #EA8025; */
+  
+}
+.inListMenu{
+    width: 60%;
+    height: 100%;
+    /* background-color: brown; */
+    margin: auto;
+    border-right: #989897 solid 3px;
+}
+.inListMenu ul{
+    margin-top: 4vw;
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+    /* text-align: center; */
+}
+.inListMenu ul li {
+    margin-right: 20%;
+    padding-bottom: 20px;
+    text-decoration: none;
+}
+/* .inListMenu ul li a:hover {
+    border-bottom: #747471 groove ;
+    animation: fade-right 0.6s ease-in;
+ }
+
+ @keyframes fade-right {
+    0% {
+      transform: translateX(80px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  } */
+.inListMenu ul li a {
+    padding: 3px ;
+    text-decoration: none;
+    color: #747471;
+ }
+
+.inListMenu>ul>li>a{
+    position: relative;
+}
+.inListMenu>ul>li>a::before{
+    content: "";
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    background: #EA8025;
+    transition:ease-in-out 0.4s ;
+}
+.inListMenu ul li a:hover::before{
+    width: 100%;
+}
+
+/* ************ list drink************ */
+.imgMenu{
+    margin-top: 2vw;
+    width: 75%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+
+}
+.type_coffee{
+    position: absolute;
+    top:2vw;
+    left: 3vw;
+    margin: 0;
+
+    
+}
+.tradi_coffee{
+    left: 0vw;
+    margin-top: 6vw;
+    width: 26%;
+    height: 18vw;
+    /* background-color: #747471; */
+}
+.tradi_coffee p{
+    bottom: 0;
+    margin: 5% 0 0 10%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    
+
+}
+
+.black_coffee{
+    width: auto;
+    height: 100%;
+    background-image: url('../images_coffee/black_coffee_white_cup-removebg-preview.png');
+    background-size: cover;
+    border-radius: 3px ;
+    /* box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px; */
+}
+.brown_coffee{
+    width: auto;
+    height: 100%;
+    background-image: url('../images_coffee/brown_coffee-3.png');
+    background-size: cover;
+    border-radius: 3px ;
+    /* box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px; */
+}
+.hot_coffee{
+    width: auto;
+    height: 100%;
+    background-image: url('../images_coffee/black_coffee_white_cup-removebg-preview.png');
+    background-size: cover;
+    border-radius: 3px ;
+    /* box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px; */
+}
+.tradi_coffee a {
+    text-decoration: none;
+    /* color: rgb(226, 137, 21); */
+}
+.tradi_coffee p{
+    color:rgb(226, 137, 21) ;
+}
