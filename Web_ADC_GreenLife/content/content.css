@@ -1,0 +1,456 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+/* Slideshow container */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #fdf9f9d7;
+}
+
+
+/* Navigation */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    max-width: 100% !important;
+    background-color: #fff;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    align-items: center;
+    border-width: 1px;
+    border-color: rgb(206, 201, 201);
+    border-style: inset;
+    z-index: 2;
+    margin: 0;
+}
+
+.logo {
+    flex: 20%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.navlist {
+    height: 100%;
+    width: 48vw;
+    flex: 50%;
+}
+
+.navlist ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.navlist ul li a {
+    text-decoration: none;
+    padding: 8px 6px;
+    /* border-radius: 8px; */
+    transition: color 0.8s, background 0.8s;
+    color: #333;
+}
+
+.search-box {
+    height: 100%;
+    align-items: center;
+    margin-right: 10px;
+    flex: 20%;
+    /* margin-left: 100px; */
+}
+
+.navlist ul li a:hover {
+    background-color: gray;
+    border-radius: 6px;
+    color: white;
+}
+
+#node2 a {
+    border-color: #333;
+    border-bottom: 3px solid;
+}
+
+.PhoneNav {
+    flex: 10%;
+    float: right;
+    z-index: 5;
+}
+
+
+/* Navigation end//////////////////////////////////////////////// */
+
+.overlayPhone {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlayPhone-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlayPhone a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #f1f1f1;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlayPhone a:hover,
+.overlayPhone a:focus {
+    color: #f1f1f1;
+}
+
+.overlayPhone .closebtn {
+    position: absolute;
+    align-items: center;
+    margin: auto;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlayPhone a {
+        font-size: 1.5rem
+    }
+    .overlayPhone .closebtn {
+        font-size: 1.5rem;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .PhoneNav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .navlist {
+        display: none;
+    }
+    .search-box {
+        display: none;
+    }
+}
+
+
+/* Style the navigation bar links */
+
+
+/* Active/current link */
+
+
+/* Column container */
+
+.slideshow-container {
+    padding-top: 0;
+    width: 85%;
+    height: auto;
+    position: relative;
+    margin: auto;
+}
+
+
+/* Hide the images by default */
+
+.mySlides {
+    display: none;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(190, 16, 16);
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Caption text */
+
+.text {
+    color: #fcf7f7fb;
+    font-size: 2rem;
+    padding-top: 40px;
+    padding: auto 10%;
+    padding-bottom: 40px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: #07070785;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.contentless {
+    width: 85%;
+    margin: 2% auto;
+}
+
+.container1 {
+    display: flex;
+    margin-bottom: 10%;
+    flex-direction: row;
+}
+
+.container2 {
+    display: flex;
+    margin-bottom: 10%;
+    flex-direction: row;
+}
+
+.container3 {
+    display: flex;
+    margin-bottom: 10%;
+    flex-direction: row;
+}
+
+.im {
+    flex: 50%;
+    margin-right: 5%;
+    height: 100% !important
+}
+
+.txt {
+    flex: 50%;
+    margin-left: 5%;
+    border-bottom-style: groove;
+}
+
+.image {
+    width: 100%;
+    height: 280px;
+    border-radius: 10px;
+    -moz-box-shadow: 3px 3px 5px 0px #666;
+    -webkit-box-shadow: 3px 3px 5px 0px #666;
+    box-shadow: 2px 2px 3px 0px #666;
+}
+
+.row1 {
+    position: relative;
+}
+
+.row2 {
+    position: relative;
+}
+
+.row3 {
+    position: relative;
+}
+
+
+/* The overlay effect (full height and width) - lays on top of the container and over the image */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0d0d0e77;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: .6s ease;
+    border-radius: 10px;
+}
+
+
+/* When you mouse over the container, the overlay text will "zoom" in display */
+
+.container1:hover .overlay {
+    transform: scale(1);
+}
+
+.container2:hover .overlay {
+    transform: scale(1);
+}
+
+.container3:hover .overlay {
+    transform: scale(1);
+}
+
+
+/* Some text inside the overlay, which is positioned in the middle vertically and horizontally */
+
+.text_tutorial {
+    color: white;
+    font-size: 16px;
+    /* margin: auto; */
+    position: absolute;
+    text-align: center;
+}
+
+
+/* Chua chinh vao giua ddc */
+
+.text_tutorial ol {
+    width: 100%;
+    height: 100%;
+    text-align: center !important;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+#le {
+    overflow: hidden;
+    width: 100%;
+    border-top-style: groove;
+    border-top-width: 1px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+@media (max-width:700px) {
+    .body,
+    .text {
+        font-size: 0.8rem;
+        /* max-width: 100vw; */
+    }
+}
+
+@media (max-width:700px) {
+    .slideshow-container {
+        width: 100%;
+        /* max-width: 100vw; */
+    }
+    html,
+    body {
+        box-sizing: border-box;
+        font-size: 0.8rem;
+        max-width: 100vw;
+        /* overflow: hidden; */
+    }
+    .navbar {
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+    .navlist {
+        width: 78vw;
+    }
+    .fade img {
+        height: 220px !important;
+    }
+    .container1,
+    .container2,
+    .container3 {
+        flex-direction: column;
+        background-color: rgba(250, 245, 245, 0.966);
+        box-shadow: 1px 1px 1px 1px #AAA;
+    }
+    .im,
+    .txt {
+        font-size: 0.8rem;
+        margin: 3% 3%;
+        border-bottom-style: none;
+    }
+}
+
+@media (max-width:1000px) {
+    .search-box {
+        display: none;
+    }
+}

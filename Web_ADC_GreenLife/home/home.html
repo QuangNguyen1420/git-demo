@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ADC-GreenLife</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./home.css" />
+    <script src="./plotly.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            // apiKey: "AIzaSyCDODVkWWUruhCE3gaSPcck2xLM8FumvcQ",
+            // authDomain: "duc-bkhn-k62.firebaseapp.com",
+            // databaseURL: "https://duc-bkhn-k62.firebaseio.com",
+            // projectId: "duc-bkhn-k62",
+            // storageBucket: "duc-bkhn-k62.appspot.com",
+            // messagingSenderId: "491904579132",
+            // appId: "1:491904579132:web:a9a496e855242f8a9e3539",
+            // measurementId: "G-PJRS999TPB"
+            apiKey: "AIzaSyC7h4lYYzHdQbl9D-ktg9pXMOsdec25ukg",
+            authDomain: "myweb-56d53.firebaseapp.com",
+            databaseURL: "https://myweb-56d53-default-rtdb.firebaseio.com",
+            projectId: "myweb-56d53",
+            storageBucket: "myweb-56d53.appspot.com",
+            messagingSenderId: "214944501560",
+            appId: "1:214944501560:web:1bce3dbdb9adbe2016bbcd",
+            measurementId: "G-29653FNL5C"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig); 
+        firebase.analytics();
+    </script>
+
+</head>
+
+<body>
+    <!-- Start navagation -->
+    <div class="navbar">
+        <div class="nav logo">
+            <img src="../images/logo-adc.jpg" style="width: 60px;height: auto;">
+        </div>
+        <div class="navlist">
+            <ul>
+                <li id="node1" class="list"><a href="">Home</a></li>
+                <li class="list"><a style="color:#333" href="../content/content.html">Do You Know?</a></li>
+                <li class="list"><a style="color:#333" href="../ecogreen/ecogreen.html">EcoGreen</a></li>
+                <li class="list"><a style="color:#333" href="../ecogreen/ecogreen.html">Community</a></li>
+
+            </ul>
+        </div>
+        <div class="search-box">
+            <input type="text" class="search-txt" namr="" placeholder="search...">
+            <a href="#"><i class="fa fa-search"></i></a>
+        </div>
+        <div class="PhoneNav">
+            <div id="myNav" class="overlayPhone">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlayPhone-content">
+                    <a href="">Home</a>
+                    <a href="../content/content.html">Do You Know?</a>
+                    <a href="../ecogreen/ecogreen.html">EcoGreen</a>
+                    <a href="../ecogreen/ecogreen.html">Community</a>
+                    <input style="font-size: 18px;margin:10% 5% 0% 5%;" type="text" class="search-txt" namr="" placeholder="search...">
+
+                </div>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        </div>
+    </div>
+    <!-- End navagation --> 
+    <div class="row">
+        <!--  -->
+        <div class="left_content">
+            <h2>Thang đánh giá chất lượng không khí theo AQI</h2>
+            <div id="img_AQI_Table">
+                <img src="../images/AQI-guide.jpg" style="width: 100%;height: auto;" />
+            </div>
+            <h1 style="height: 5px;"></h1>
+            <h3>Nồng độ bụi cập nhập sau từng giờ </h3>
+            <h4>PM2.5</h4>
+            <div class="container">
+                <div class="skills pm25">65µg/m³</div>
+            </div>
+            <h4>PM1.0</h4>
+            <div class="container">
+                <div class="skills pm1">38µg/m³</div>
+            </div>
+            <h4>PM10</h4>
+            <div class="container">
+                <div class="skills pm10">17µg/m³</div>
+            </div>
+            <div id="uvtable">
+                <h3>Sử dụng chỉ số uv theo bảng màu</h3>
+                <img src="../images/uv-index.png">
+            </div>
+        </div>
+        <div class="main">
+            <h2>CHẤT LƯỢNG KHÔNG KHÍ HÀ NỘI</h2>
+            <h3 id="demo"></h3>
+
+            <div id="waring">
+                <div id="thongbao">
+                    <p>chỉ số AQI</p>
+                    <h3 id="aqi"></h3>
+                </div>
+                <div class="myicon">
+                    <img src="../images/ic-face-green.svg" style="width:70px;height: 70px;">
+                </div>
+                <div class="myicon">
+                    <img src="../images/ic-face-yellow.svg" style="width:70px;height: 70px; ">
+                </div>
+                <div class="myicon">
+                    <img src="../images/ic-face-orange.svg" style="width:70px;height: 70px; ">
+                </div>
+                <div class="myicon">
+                    <img src="../images/ic-face-red.svg" style="width:70px;height:70px">
+                </div>
+                <div class="myicon">
+                    <img src="../images/ic-face-purple.svg" style="width:70px;height: 70px; ">
+                </div>
+            </div>
+
+            <div class="chat" >
+                <h4 style="float: left;margin-right: 10px;">Chất gây ô nhiễm chính:</h4>
+                <h3 style="color:rgba(31, 28, 2, 0.801);transform:translateY(20px); ">PM2.5</h3>
+            </div>
+            <div id="lam">
+                <img src="../images/lamp.png" style="width:30px;height: 30px;">
+                <p id="lamp"></p>
+            </div>
+            <div class="fakeimg" style="width:100% ;">
+                <h3>Biểu đồ lịch sử nồng độ pm2.5</h3>
+                <canvas id="myChart"></canvas>
+            </div>
+            <center>
+                <div style="margin-top:50px">
+                    <h3>Chỉ số thời tiết-Tia uv</h3>
+                </div>
+            </center>
+            <div class="weather">
+                <div id="temp">
+                    <p>temperature</p>
+                    <i class="fa fa-thermometer-half" aria-hidden="true" style="font-size:5vw;color:rgb(219, 205, 5);text-shadow:2px 2px 4px #000000;"></i>
+                    <p id="te" style="font-size:3vw">35°C</p>
+                </div>
+                <div id="humi">
+                    <p>humidity</p>
+                    <i class="fa fa-heart-o" aria-hidden="true" style="font-size:5vw;color:rgb(77, 185, 218);text-shadow:2px 2px 4px #000000;"></i>
+                    <p id="hu" style="font-size:3vw">70%</p>
+                </div>
+                <div id="uv">
+                    <p>uv index</p>
+                    <i class="fa fa-sun-o" aria-hidden="true" style="font-size:5vw;color:rgb(218, 40, 173);text-shadow:2px 2px 4px #000000;"></i>
+                    <p id="u" style="font-size:3vw">3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="icon-bar">
+        <a class="home" href="#"><i class="fa fa-home"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="inbox"><i class="fa fa-envelope"></i></a>
+        <a href="#" class="google"><i class="fa fa-google"></i></a>
+        <a href="https://www.youtube.com/watch?v=bk-7487l1OQ&t=1659s" class="youtube"><i class="fa fa-youtube"></i></a>
+    </div>
+    <div class="footer">
+        <ul class="contact">
+            <li><a href="https://www.google.com/maps/dir/19.922697,105.4185341/tr%C6%B0%E1%BB%9Dng+%C4%91%E1%BA%A1i+h%E1%BB%8Dc+b%C3%A1ch+khoa+h%C3%A0+n%E1%BB%8Di/@21.0082701,105.8359495,15.25z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3135ac76ccab6dd7:0x55e92a5b07a97d03!2m2!1d105.843136!2d21.0070253">Địa chỉ:1 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội</a></li>
+            <li>
+                <a href="https://www.facebook.com/adc.hust.vn">Facebook</a></li>
+            <li>Liên hệ: 0123456789</li>
+        </ul>
+        <div id="ggmap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6719723493634!2d105.843631514407!3d21.005782293939408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad5569f4fbf1%3A0x5bf30cadcd91e2c3!2zxJDhuqBJIEjhu4xDIELDgUNIIEtIT0EgQ-G7lE5HIFRS4bqmTiDEkOG6oEkgTkdIxKhB!5e0!3m2!1svi!2s!4v1620228845593!5m2!1svi!2s"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <script>
+        var myVar = setInterval(myTimer, 1000);
+
+        function myTimer() {
+            var d = new Date();
+            var t = d.toLocaleTimeString() + "   Hà Nội, " + String(d.getDate()) + "/" + String(d.getMonth() + 1) + "/" + String(d.getFullYear());
+            document.getElementById("demo").innerHTML = t;
+        }
+
+        function openNav() {
+            document.getElementById("myNav").style.width = "65%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+    <script src="./home.js"></script>
+
+</body>
+
+</html>

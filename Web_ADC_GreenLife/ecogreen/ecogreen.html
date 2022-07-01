@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADC-GreenLife</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="./ecogreen.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+    .footer {
+        width: 100%;
+        height: auto;
+        margin-top: 10%;
+        padding: 20px;
+        text-align: center;
+        background: rgb(126, 123, 123);
+        border-radius: 8px;
+    }
+    
+    form {
+        color: #f1f1f1;
+        width: 50%;
+        height: auto;
+        border: 3px solid #f1f1f1;
+    }
+    /* Full-width inputs */
+    
+    .input1[type=text],
+    .input1[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    /* Set a style for all buttons */
+    
+    button {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    /* Add a hover effect for buttons */
+    
+    button:hover {
+        opacity: 0.8;
+    }
+    /* Extra style for the cancel button (red) */
+    
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+        transform: translateX(80%);
+    }
+    /* Center the avatar image inside this container */
+    
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+    /* Avatar image */
+    
+    img.avatar {
+        width: 40%;
+        border-radius: 50%;
+    }
+    /* Add padding to containers */
+    
+    .container {
+        padding: 16px;
+    }
+    /* The "Forgot password" text */
+    
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+    /* Change styles for span and cancel button on extra small screens */
+    /* @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+    } */
+    
+    #map {
+        width: 80%;
+        height: 500px;
+    }
+    
+    @media (max-width:700px) {
+        .row1,
+        .row2 {
+            flex-direction: column;
+        }
+        #map {
+            width: 100%;
+            height: 250px;
+        }
+        form {
+            width: 80%;
+            height: 80%;
+            overflow: hidden;
+        }
+        .footer {
+            height: 260px;
+            overflow: hidden;
+        }
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <div class="nav logo">
+            <img src="../images/logo-adc.jpg" style="width: 60px;height: auto;">
+        </div>
+        <div class="navlist">
+            <ul>
+                <li class="list"><a style="color:#333" href="../home/home.html">Home</a></li>
+                <li class="list"><a style="color:#333" href="../content/content.html">Do You Know?</a></li>
+                <li id="node3" class="list"><a href="#">EcoGreen</a></li>
+                <li class="list"><a style="color:#333" href="../ecogreen/ecogreen.html">Community</a></li>
+
+            </ul>
+        </div>
+        <div class="search-box">
+            <input type="text" class="search-txt" namr="" placeholder="search...">
+            <a href="#"><i class="fa fa-search"></i></a>
+        </div>
+        <div class="PhoneNav">
+            <div id="myNav" class="overlayPhone">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlayPhone-content">
+                    <a href="">Home</a>
+                    <a href="../content/content.html">Do You Know?</a>
+                    <a href="../ecogreen/ecogreen.html">EcoGreen</a>
+                    <a href="../ecogreen/ecogreen.html">Community</a>
+                    <input style="font-size: 18px;margin:10% 5% 0% 5%;" type="text" class="search-txt" namr="" placeholder="search...">
+
+                </div>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        </div>
+    </div>
+    <!-- AIzaSyC61H36qoTDyjoAi2vFf2I_AzqWH8Y9pqM -->
+    <center>
+        <div id="map" style="margin-bottom: 0;"></div>
+    </center>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script>
+        var map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: 16.96468343380913,
+                    lng: 112.38463701679551
+                },
+                zoom: 4.8,
+                mapId: '7a4397ec27fd4800',
+                gestureHandling: "greedy",
+
+            });
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: 21.005163840257662,
+                    lng: 105.84558839682013
+                },
+                url: 'https://myweb-56d53.web.app/home.html',
+                map: map,
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+                window.location.href = marker.url;
+
+            });
+        }
+
+        // google-site-verification=pCAGvNt7neZAaQsYRQJCdLKdVZUY7u3zLcJmNa7-CLo/AIzaSyBXSgebhJ7UR6rcV4uSIbnqriZuVE2bQfA
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDc5p5oGIDnCC4eWG562fMv-0-85JxxDuk&callback=initMap&libraries=&v=weekly" async defer></script>
+    <h4 style="text-align:center;">Bản đồ điểm đặt thiết bị EcoGreen</h4>
+
+    <div id="pin" class="fa" style="text-align:center;margin-top: 10%;"></div>
+    <div class="row1">
+        <div class="ver2img">
+            <img src="../images/ecover2.jpg" style="width:100%;height:auto">
+            <div id="overlay">
+                <img src="../images/ecover2-open.jpg" style="width: 70%; overflow: hidden; transform:translateX(20%)">
+            </div>
+        </div>
+        <div class="txt1 v2">
+            <h2 class="text">Thiết bị quan trắc chất lượng không khí trong trường học </h2>
+            </br>
+            <p class="text">Nhằm mục đích đo đạc , cảnh báo kịp thời chất lượng không khí trong trường.</p>
+
+            <p class="text">Thầy cô có thể điều chỉnh mức độ các hoạt động thể chất , vui chơi ngoài trời của học sinh.</p>
+
+            <p class="text">Hãy đặt ecogreen tại khu vực học sinh tập thể dục và có ánh nắng mặt trời!</p>
+        </div>
+    </div>
+    <div class="row2">
+        <div class="im2">
+            <img id="appim" src="../images/appimg.png" style="height: 80%">
+            <img id="webim" src="../images/webimg.png" style="width:90%;height:auto">
+        </div>
+        <div class="txt">
+            <h2>Thiết bị theo dõi thân thiện người dùng !</h2>
+            <p>Ứng dụng cảnh báo sớm , giáo viên có thể phân tích biểu đồ bụi để đưa ra kế hoạch tập luyện</p>
+            <p>Lên bài giảng truyền tải thông điệp về môi trường cho học sinh!</p>
+        </div>
+    </div>
+    <div class="footer">
+        <center>
+            <form>
+                <!-- <div class="imgcontainer">
+                <img src="img_avatar2.png" alt="Avatar" class="avatar">
+            </div> -->
+
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input class="input1" type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input class="input1" type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit">Login</button>
+                    <label>
+                <input class="input1" type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </center>
+
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "65%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        function chargebattery() {
+            var a;
+            a = document.getElementById("pin");
+            a.innerHTML = "&#xf241;" + "60%";
+            // setTimeout(function() {
+            //     a.innerHTML = "&#xf243;";
+            // }, 1000);
+            // setTimeout(function() {
+            //     a.innerHTML = "&#xf242;";
+            // }, 2000);
+            // setTimeout(function() {
+            //     a.innerHTML = "&#xf241;";
+            // }, 3000);
+            // setTimeout(function() {
+            //     a.innerHTML = "&#xf240;";
+            // }, 4000);
+        }
+        chargebattery();
+        setInterval(chargebattery, 5000);
+        var b = document.getElementById("overlay")
+        setInterval(function() {
+            b.style.transform = "scale(1)";
+            setTimeout(function() {
+                b.style.transform = "scale(0)";
+            }, 5000);
+        }, 10000)
+    </script>
+
+
+</body>
+
+</html>

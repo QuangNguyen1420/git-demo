@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADC-GreenLife</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="./content.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav logo">
+            <img src="../images/logo-adc.jpg" style="width: 60px;height: auto;">
+        </div>
+        <div class="navlist">
+            <ul>
+                <li class="list"><a style="color:#333" href="../home/home.html">Home</a></li>
+                <li id="node2" class="list"><a href="#">Do You Know?</a></li>
+                <li class="list"><a style="color:#333" href="../ecogreen/ecogreen.html">EcoGreen</a></li>
+                <li class="list"><a style="color:#333" href="../ecogreen/ecogreen.html">Community</a></li>
+
+            </ul>
+        </div>
+        <div class="search-box">
+            <input type="text" class="search-txt" namr="" placeholder="search...">
+            <a href="#"><i class="fa fa-search"></i></a>
+        </div>
+        <div class="PhoneNav">
+            <div id="myNav" class="overlayPhone">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlayPhone-content">
+                    <a href="../home/home.html">Home</a>
+                    <a href="../content/content.html">Do You Know?</a>
+                    <a href="../ecogreen/ecogreen.html">EcoGreen</a>
+                    <a href="../ecogreen/ecogreen.html">Community</a>
+                    <input style="font-size: 18px;margin:10% 5% 0% 5%;" type="text" class="search-txt" namr="" placeholder="search...">
+
+                </div>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        </div>
+    </div>
+
+    </div>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <a href="http://moitruongviet.edu.vn/o-nhiem-khong-khi-khi-thai-tu-phuong-tien-giao-thong/"><img src="../images/hanoians-worried-as-air-quality-has-become!13-7.jpg" style="width:100%;height: 560px;"></a>
+
+            <div class="text"> Khí thải phương tiện giao thông là một trong những tác nhân chính gây nên ô nhiễm không khí</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <a href="https://congluan.vn/ha-noi-cham-dut-hoan-toan-tinh-trang-dot-rom-ra-truoc-ngay-31-12-2020-post84049.html"><img src="../images/dot rom ra.jpg" style="width:100%;height: 560px"></a>
+            <div class="text">Khói do đốt rơm rạ thường cháy không thành ngọn lửa nên sinh ra rất nhiều khí CO (gọi là khí monoxide carbon). Đây là loại khí rất độc có thể gây chết người. Người hít nhiều và kéo dài có thể biến đổi cấu trúc của bộ máy hô hấp, dễ mắc nhiễm
+                trùng phổi, bệnh phổi tắc nghẽn mạn tính, ung thư phổi...
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <a href="https://hutbuicongnghiep.com/tac-hai-cua-bui-doi-voi-co-the/"><img src="../images/tac-hai-cua-bui-doi-voi-co-the-6.jpg" style="width:100%;height: 560px"></a>
+            <div class="text">Bụi mịn tác hại tới sức khỏe con người chủ yếu thông qua các bệnh về hô hấp. Những hạt bụi sau khi đi vào cơ thể sẽ tích tụ tại phổi gây ra viêm phế quản, viêm phổi, hen suyễn, ung thư,…</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <div onclick="overlayoff()" class="contentless">
+        <div class="container1">
+            <div class="im row1">
+                <img src="../images/taptheducdungcach.jpg" alt="Avatar" class="image" style="width: 100%;">
+                <div class="overlay">
+                    <div class="text_tutorial">
+                        <ol id="txte" style="text-align:center; " >
+                            <li>Kiểm tra mức độ ô nhiễm không khí</li>
+                            <li>Chọn thời điểm tập luyện</li>
+                            <li>Giảm nhẹ bài tập </li>
+                            <li>Cân nhắc tập luyện trong nhà</li>
+                            <li>Tránh khu vực hay xảy ra ô nhiễm</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="txt row1">
+
+                <h1>Ô nhiễm không khí tác động lớn đến hoạt động ngoài trời</h1>
+                <p>Trong khi họat động thể chất,bạn thường hít thở nhiều hơn và sâu hơn. Hơn nữa , những thói quen như hít thở bằng miệng khiến các chất ô nhiễm đi thẳng vào phổi mà không được lọc bởi khoang mũi. </p>
+                <h3 style="display:inline;">Chi tiết:</h3>
+                <a href="https://beyeu.com/tap-the-duc-ngoai-troi-sao-cho-dung-cach">Tập thể dục ngoài trời đúng cách</a>
+
+            </div>
+        </div>
+        <div class="container2">
+            <div class="im row2">
+                <img src="../images/o-nhiem-khong-khi-trong-nha.jpg" alt="Avatar2" class="image" style="width: 100%;">
+                <div class="overlay">
+                    <div class="text_tutorial">
+                        <ol>
+                            <h4> Không khí trong nhà có thể ô nhiểm gấp 8 lần!!!</h4><br>
+                            <h3>Biện pháp khắc phục:</h3>
+                            <li>Cải thiện lưu thông gió</li>
+                            <li>Hạn chết hút thuốc chất gây mùi </li>
+                            <li>Trồng cây xanh </li>
+                            <li>Thường xuyên rọn dẹp, tránh nấm mốc</li>
+                            <li>Sử dụng máy hút bụi</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="txt row2">
+
+                <h1>Không khí trong nhà liệu có an toàn?</h1>
+                <p>WHO cũng cho biết, ô nhiễm không khí trong nhà được đánh giá là vấn đề nghiêm trọng nhất, vì có tới 80% hoạt động của con người diễn ra trong nhà. Tính trung bình, mức độ ô nhiễm không khí ở trong nhà cao gấp 8 lần so với ngoài trời.</p>
+                <h3 style="display:inline;">Chi tiết:</h3>
+                <a href="https://www.moitruongvadothi.vn/moi-truong/vi-sao-o-nhiem-khong-khi-trong-nha-lai-cao-hon-ngoai-troi-a27448.html">Ô nhiễm không khí trong nhà</a>
+            </div>
+        </div>
+        <div class="container3">
+            <div class="im row3">
+                <img src="../images/buipm25.jpg" alt="Avatar2" class="image" style="width: 100%;">
+                <div class="overlay">
+                    <div class="text_tutorial">
+                        <ol>
+                            <h4> Cách chống lại tác hại từ bụi mịn.</h4>
+                            <li>Hạn chế ra đường vào giờ cao điểm</li>
+                            <li>Sử dụng khẩu trang chuyên dụng có màng lọc bụi </li>
+                            <li>Vệ sinh khoang mũi , họng thường xuyên</li>
+                            <li>Bổ sung một chế độ ăn giàu dinh dưỡng, rau xanh và trái cây chứa vitamin A, C...để giúp tăng cường hệ miễn dịch và ngăn ngừa các bệnh về đường hô hấp do bụi gây ra</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="txt row3">
+
+                <h1>Bụi PM2.5 là gì?Cách giảm tác hại từ bụi mịn gây ra.</h1>
+                <p>Theo định nghĩa của WHO: “PM là một chất gây ô nhiễm không khí, bao gồm hỗn hợp các hạt rắn và hạt lỏng, chúng lơ lửng trong không khí.” Chỉ số PM thường được dùng để đề cập đến các hạt có đường kính nhỏ hơn 10 μm (PM10) và nhỏ hơn 2,5
+                    μm (PM 2.5). Trong đó, μm: micromet (1μm = 0.001mm). Những hạt này thường được gọi chung là bụi mịn, bụi siêu mịn.</p>
+                <h3 style="display:inline;">Chi tiết:</h3>
+                <a href="https://aqualife.vn/pm-2-5-la-gi-nhung-anh-huong-cua-bui-sieu-min-toi-suc-khoe/">Bụi PM2.5</a>
+            </div>
+        </div>
+    </div>
+    <div id="le">
+        <h3>What Causes Air Pollution</h3>
+    </div>
+    <center>
+        <video width="82%" controls>
+           
+        <source src="../Air Pollution 101 - National Geographic.mp4" type="video/mp4">
+        <source src="mov_bbb.ogg" type="video/ogg">
+        Your browser does not support HTML video.
+      </video>
+    </center>
+    <script>
+        var ovloff = document.getElementsByClassName("overlay");
+
+        function overlayoff() {
+
+
+            ovloff[0].style.transform = "scale(0)";
+            ovloff[1].style.transform = "scale(0)";
+            ovloff[2].style.transform = "scale(0)";
+            // setTimeout(function() {
+            //     ovloff[num].style.transform = "scale(0)";
+
+            // }, 5000)
+            // if (num != 4) {
+            //     ovloff[num].style.transform = "scale(1)";
+            // } else {
+            //     ovloff[0].style.transform = "scale(0)";
+            //     ovloff[1].style.transform = "scale(0)";
+            //     ovloff[2].style.transform = "scale(0)";
+            // }
+
+        }
+    </script>
+    <script type="text/javascript" src="./content.js"></script>
+</body>
+
+</html>
