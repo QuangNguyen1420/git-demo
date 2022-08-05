@@ -1,5 +1,5 @@
 # git-demo
-buy me a coffee <3
+Would you like a cup of coffee <3
 
 
 
